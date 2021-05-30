@@ -6,8 +6,9 @@ services:
 
 before_install:
   - docker build -t micaelmc/docker-react -f Dockerfile.dev .
-   
 
+script:
+  - docker run -e CI=true micaelmc/docker-react npm run test
 
 # script:
-#   - docker run USERNAME/docker-react npm run test -- --coverage
+#   - docker run -e CI=true USERNAME/docker-react npm run test
