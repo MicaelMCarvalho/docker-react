@@ -1,0 +1,13 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t micaelmc/docker-react -f Dockerfile.dev .
+   
+
+
+# script:
+#   - docker run USERNAME/docker-react npm run test -- --coverage
